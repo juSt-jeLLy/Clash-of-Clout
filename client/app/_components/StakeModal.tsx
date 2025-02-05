@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ethers } from "ethers";
 import contractABI from "../../../server/scripts/abi.json";
 import { toast } from "react-hot-toast";
+// import InsufficientBalanceModal from "./InsufficientBalance";
 
 interface StakeModalProps {
   isOpen: boolean;
@@ -17,7 +18,9 @@ export default function StakeModal({ isOpen, onClose, memeId }: StakeModalProps)
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string;
-
+  
+ 
+    
   const handleStake = async () => {
     if (!stakeAmount || parseFloat(stakeAmount) <= 0) {
       toast.error("Please enter a valid stake amount.");
@@ -43,8 +46,10 @@ export default function StakeModal({ isOpen, onClose, memeId }: StakeModalProps)
       const balance = await contract.balanceOf(signer.address);
       if (balance < amountInWei) {
         toast.error("Insufficient token balance.");
+        alert("You don't have sufficient meme tokens in your account");
         return;
       }
+
 
       // Check allowance
       const allowance = await contract.allowance(signer.address, CONTRACT_ADDRESS);
