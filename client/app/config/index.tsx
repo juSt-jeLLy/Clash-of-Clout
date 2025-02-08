@@ -1,26 +1,24 @@
-// config/index.tsx
+import { createConfig, cookieStorage, createStorage } from "wagmi";
+import { walletConnect, injected } from "wagmi/connectors";
+import { http, createPublicClient } from "viem";
+import { mainnet, flowTestnet } from "viem/chains";
 
-import { cookieStorage, createStorage} from "@wagmi/core";
-import { WagmiAdapter } from "@reown/appkit-adapter-wagmi";
-import { mainnet, arbitrum, sepolia } from "@reown/appkit/networks";
-
-// Get projectId from https://cloud.reown.com
-export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
+const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
 
 if (!projectId) {
   throw new Error("Project ID is not defined");
 }
 
-export const networks = [mainnet, arbitrum, sepolia];
-
-//Set up the Wagmi Adapter (Config)
-export const wagmiAdapter = new WagmiAdapter({
+export const config = createConfig({
+  chains: [mainnet, flowTestnet],
+  connectors: [walletConnect({ projectId }), injected()],
   storage: createStorage({
     storage: cookieStorage,
   }),
   ssr: true,
-  projectId,
-  networks,
+  client: ({ chain }) =>
+    createPublicClient({
+      chain,
+      transport: http(),
+    }),
 });
-
-export const config = wagmiAdapter.wagmiConfig;
