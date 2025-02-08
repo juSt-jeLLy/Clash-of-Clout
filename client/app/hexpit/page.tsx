@@ -24,10 +24,14 @@ export default function HexPit() {
     setIsLoading(true);
 
     try {
+      const headers = new Headers();
+      headers.append("ngrok-skip-browser-warning", "69420");
+
       const response = await fetch(
         process.env.NEXT_PUBLIC_API_URL + "/generate/" + keywords,
         {
           method: "GET",
+          headers: headers
         }
       );
 
