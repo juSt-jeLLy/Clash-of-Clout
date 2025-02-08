@@ -95,12 +95,11 @@ export default function HexPit() {
       console.error(err);
     }
   };
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="min-h-screen bg-black pt-24 px-4"
+      className="min-h-screen bg-black pt-24 pb-24 px-4"
     >
       <Toaster position="top-center" reverseOrder={false} />
       <div className="container mx-auto">
