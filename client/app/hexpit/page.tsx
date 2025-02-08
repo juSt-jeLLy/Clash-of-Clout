@@ -80,20 +80,6 @@ export default function HexPit() {
 
       provider.on("debug", console.log);
 
-      // Upload meme to IPFS
-      /*
-      const ipfsResponse = await fetch("/api/upload-to-ipfs", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ imageUrl: memeUrl }),
-      });
-
-      if (!ipfsResponse.ok) throw new Error("Failed to upload to IPFS");
-
-      const ipfsData = await ipfsResponse.json();
-      const cid = ipfsData.cid;*/
-
-      // Submit meme to smart contract
       const tx = await contract.submitMeme(cidHash, await signer.getAddress(), {
         gasLimit: ethers.toNumber("500000"),
         gasPrice: ethers.parseUnits("0.1", "gwei"),
@@ -128,6 +114,68 @@ export default function HexPit() {
             The Hex Pit
           </h1>
           <p className="text-purple-300 mt-4">Forge Your Meme Magic</p>
+        </motion.div>
+
+        {/* Warning and How-It-Works Section */}
+        <motion.div 
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="max-w-4xl mx-auto mb-16 text-center"
+        >
+          {/* Animated Warning Banner */}
+          <motion.div 
+            className="bg-red-500/20 border-2 border-red-500/30 rounded-xl p-4 mb-4"
+            whileHover={{ scale: 1.02 }}
+            animate={{ 
+              boxShadow: ["0 0 0 rgba(239, 68, 68, 0)", "0 0 20px rgba(239, 68, 68, 0.3)", "0 0 0 rgba(239, 68, 68, 0)"],
+            }}
+            transition={{ repeat: Infinity, duration: 2 }}
+          >
+            <motion.p 
+              className="text-red-300 font-bold text-xl"
+              animate={{ scale: [1, 1.02, 1] }}
+              transition={{ repeat: Infinity, duration: 3 }}
+            >
+              🚨 Plot Twist: This is an AI-exclusive meme party! Only owner agent can submit memes to the contest. But don’t worry, you get front-row seats to witness the AI cook up some absolute meme magic based on your keywords!
+            </motion.p>
+          </motion.div>
+
+          {/* How It Works Card */}
+          <motion.div 
+            className="bg-purple-900/30 border-2 border-purple-500/30 rounded-xl p-6"
+            whileHover={{ scale: 1.01 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <motion.h3 
+              className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400 text-transparent bg-clip-text mb-6"
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ repeat: Infinity, duration: 3 }}
+            >
+              The Sacred Ritual of Meme Creation
+            </motion.h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              {[
+                { emoji: "⚡", step: "Drop Your Keywords", desc: "Plant the seeds of chaos" },
+                { emoji: "🤖", step: "AI Does Its Thing", desc: "Watch the digital sorcery unfold" },
+                { emoji: "🎉", step: "Question Reality", desc: "Embrace the meme dimension" }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-purple-800/20 rounded-lg p-3 border border-purple-500/30"
+                  whileHover={{ y: -5, scale: 1.05 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.2 }}
+                >
+                  <div className="text-3xl mb-2">{item.emoji}</div>
+                  <h4 className="text-purple-300 font-bold mb-1">{item.step}</h4>
+                  <p className="text-purple-200/80 text-sm">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Meme Generation Section */}

@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { fetchMemes } from "../utils/fetchMemes";
 import { ethers } from "ethers";
 import contractABI from "../abi.json";
-
 interface Meme {
   id: string;
   imageUrl: string;
@@ -17,6 +16,8 @@ interface Meme {
   stakes: number;
   tags: string[];
   isAvailable: boolean;
+  twitterUrl?: string;
+  discordMessageUrl?: string;
 }
 
 export default function MemePool() {
@@ -32,6 +33,23 @@ export default function MemePool() {
     const providerUrl = process.env.NEXT_PUBLIC_PROVIDER_URL;
     const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS;
 
+  {memes.map((meme, index) => (
+    <motion.div
+      key={meme.id}
+      initial={{ y: 50, opacity: 0 }}
+      animate={{
+        y: 0,
+        opacity: 1,
+        transition: { delay: index * 0.1 },
+      }}
+    >
+      <MemeCard 
+        {...meme}
+        twitterUrl={meme.twitterUrl}
+        discordMessageUrl={meme.discordMessageUrl}
+      />
+    </motion.div>
+  ))}
     if (!providerUrl || !contractAddress) {
       throw new Error("Missing environment variables");
     }
@@ -66,59 +84,44 @@ export default function MemePool() {
     const interval = setInterval(loadMemes, 10000);
     return () => clearInterval(interval);
   }, []);
+  "use client";
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      <AnimatedBackground />
-      <div className="relative z-10">
-        <Navbar />
-        <div className="container mx-auto px-4 py-24">
-          <motion.h1
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            className="text-6xl font-extrabold text-center mb-12 bg-gradient-to-r from-purple-300 via-pink-300 to-purple-300 text-transparent bg-clip-text drop-shadow-lg hover:scale-105 transition-transform"
-          >
-            🔥 Colosseum 🔥
-          </motion.h1>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-          >
-            {memes.map((meme, index) => (
-              <motion.div
-                key={meme.id}
-                initial={{ y: 50, opacity: 0 }}
-                animate={{
-                  y: 0,
-                  opacity: 1,
-                  transition: { delay: index * 0.1 },
-                }}
-              >
-                <MemeCard {...meme} />
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="min-h-screen bg-black pt-24 px-4"
+    >
+      <Navbar />
+      <div className="container mx-auto">
+        <motion.h1
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          className="text-6xl font-extrabold text-center mb-12 bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400 text-transparent bg-clip-text drop-shadow-lg hover:scale-105 transition-transform"
+        >
+          🔥 Colosseum 🔥
+        </motion.h1>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        >
+          {memes.map((meme, index) => (
+            <motion.div
+              key={meme.id}
+              initial={{ y: 50, opacity: 0 }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                transition: { delay: index * 0.1 },
+              }}
+            >
+              <MemeCard {...meme} />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
-}
 
-const AnimatedBackground = () => (
-  <motion.div
-    className="absolute inset-0 bg-gradient-to-r from-purple-900 via-pink-800 to-purple-900"
-    animate={{
-      background: [
-        "linear-gradient(45deg, #4a148c, #e91e63)",
-        "linear-gradient(45deg, #311b92, #ff1744)",
-        "linear-gradient(45deg, #4a148c, #e91e63)",
-      ],
-    }}
-    transition={{
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-  />
-);
+}

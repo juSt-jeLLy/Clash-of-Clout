@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import StakeModal from "./StakeModal";
 import BuyTokensModal from "./BuyTokensModal";
-import { toast } from "react-hot-toast"; // Add toast import
+import { toast } from "react-hot-toast";
 import {useAccount} from "wagmi";
 import {ethers} from "ethers";
 import contractABI from "../abi.json";
@@ -16,10 +16,9 @@ interface MemeCardProps {
   title: string;
   creator: string;
   stakes: number;
-  tags: string[];
+  twitterUrl?: string;
+  discordMessageUrl?: string;
 }
-
-
 
 const truncateAddress = (address: string, startLength = 6, endLength = 4): string => {
   try {
@@ -32,7 +31,15 @@ const truncateAddress = (address: string, startLength = 6, endLength = 4): strin
   }
 };
 
-export default function MemeCard({ id, imageUrl, title, creator, stakes, tags }: MemeCardProps) {
+export default function MemeCard({ 
+  id, 
+  imageUrl, 
+  title, 
+  creator, 
+  stakes, 
+  twitterUrl, 
+  discordMessageUrl 
+}: MemeCardProps) {
   const [isStakeModalOpen, setIsStakeModalOpen] = useState<boolean>(false);
   const [isBuyModalOpen, setIsBuyModalOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -40,6 +47,7 @@ export default function MemeCard({ id, imageUrl, title, creator, stakes, tags }:
   const PROVIDER_URL = process.env.NEXT_PUBLIC_PROVIDER_URL;
   const {address} = useAccount();
   const [isOwner, setIsOwner]= useState<boolean>(false);
+
   const handleStakeSuccess = () => {
     toast.success("Stake transaction completed!");
     setIsStakeModalOpen(false);
@@ -83,7 +91,6 @@ export default function MemeCard({ id, imageUrl, title, creator, stakes, tags }:
         setIsOwner(false);
       }
     }
-    
   }
 
   async function declareWinner(cid: string) {
@@ -110,10 +117,9 @@ export default function MemeCard({ id, imageUrl, title, creator, stakes, tags }:
     }
   };
 
-useEffect(() => {
-  getOwner();
-}, [address, CONTRACT_ADDRESS, PROVIDER_URL, getOwner]);
-
+  useEffect(() => {
+    getOwner();
+  }, [address, CONTRACT_ADDRESS, PROVIDER_URL, getOwner]);
 
   return (
     <>
@@ -146,14 +152,31 @@ useEffect(() => {
           </motion.h3>
           
           <p className="text-gray-400 mt-2">Created by: {truncateAddress(creator)}</p>
-          
-          <div className="flex gap-2 mt-3 flex-wrap">
-            {tags?.length > 0 ? tags.map((tag) => (
-              <span key={tag} className="px-2 py-1 bg-purple-500/20 rounded-full text-xs text-purple-300">
-                {tag}
-              </span>
-            )) : (
-              <span className="text-gray-400 text-sm">No tags</span>
+
+          <div className="flex gap-2 mt-2">
+            {twitterUrl && (
+              <a 
+                href={twitterUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 transition-colors"
+              >
+                <motion.div whileHover={{ scale: 1.1 }}>
+                  🐦 View Tweet
+                </motion.div>
+              </a>
+            )}
+            {discordMessageUrl && (
+              <a
+                href={discordMessageUrl}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-purple-300 transition-colors"
+              >
+                <motion.div whileHover={{ scale: 1.1 }}>
+                  💬 View on Discord
+                </motion.div>
+              </a>
             )}
           </div>
 
@@ -182,15 +205,17 @@ useEffect(() => {
               >
                 {isLoading ? "Processing..." : "Buy Tokens"}
               </motion.button>
-              {isOwner? (<motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={handleDeclareWinner}
-                disabled={isLoading}
-                className="px-4 py-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg font-bold disabled:opacity-50"
-              >
-                {isLoading ? "Processing..." : "Declare Winner"}
-              </motion.button>): null}
+              {isOwner && (
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={handleDeclareWinner}
+                  disabled={isLoading}
+                  className="px-4 py-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg font-bold disabled:opacity-50"
+                >
+                  {isLoading ? "Processing..." : "Declare Winner"}
+                </motion.button>
+              )}
             </div>
           </div>
         </div>
@@ -210,7 +235,6 @@ useEffect(() => {
       <BuyTokensModal
         isOpen={isBuyModalOpen}
         onClose={() => {
-          
           setIsBuyModalOpen(false);
           setIsLoading(false);
         }}

@@ -10,6 +10,8 @@ interface Meme {
   stakes: number;
   tags: string[];
   isWinner?: boolean;
+  twitterUrl?: string;
+  discordMessageUrl?: string;
 }
 
 export async function fetchMemes(): Promise<Meme[]> {
@@ -41,10 +43,11 @@ export async function fetchMemes(): Promise<Meme[]> {
         votes: 0,
         stakes: Number(ethers.formatEther(totalStaked)),
         tags: metadata.tags || [],
+        twitterUrl: metadata.twitter_url || undefined,
+        discordMessageUrl: metadata.discord_message_url || undefined
       };
     })
   );
 
-  // Filter out undefined values and explicitly type as Meme[]
   return memesData.filter((meme): meme is Meme => meme !== undefined);
 }
