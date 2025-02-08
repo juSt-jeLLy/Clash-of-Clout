@@ -1,4 +1,6 @@
-import { FaGithub, FaBook, FaTwitter } from "react-icons/fa";
+
+import { FaGithub, FaDiscord } from "react-icons/fa";
+import { RiTwitterXFill } from "react-icons/ri";
 
 export default function Footer() {
   return (
@@ -7,15 +9,6 @@ export default function Footer() {
         <div className="flex justify-between items-center">
           {/* Social Links */}
           <div className="flex items-center gap-6">
-            <a
-              href="https://docs.clashofclout.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-2 text-white hover:text-pink-400 transition-all duration-300 transform hover:scale-110"
-            >
-              <FaBook className="text-xl" />
-              <span className="group-hover:underline text-sm">Docs</span>
-            </a>
             <a
               href="https://github.com/juSt-jeLLy/Clash-of-Clout"
               target="_blank"
@@ -26,13 +19,22 @@ export default function Footer() {
               <span className="group-hover:underline text-sm">GitHub</span>
             </a>
             <a
-              href="https://twitter.com/clashofclout"
+              href="https://x.com/clashofclout"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2 text-white hover:text-pink-400 transition-all duration-300 transform hover:scale-110"
             >
-              <FaTwitter className="text-xl" />
-              <span className="group-hover:underline text-sm">Twitter</span>
+              <RiTwitterXFill className="text-xl" />
+              <span className="group-hover:underline text-sm">X</span>
+            </a>
+            <a
+              href="https://discord.gg/7QtwAjMN3y"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 text-white hover:text-pink-400 transition-all duration-300 transform hover:scale-110"
+            >
+              <FaDiscord className="text-xl" />
+              <span className="group-hover:underline text-sm">Discord</span>
             </a>
           </div>
 
@@ -42,4 +44,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
