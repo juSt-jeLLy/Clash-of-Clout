@@ -12,7 +12,6 @@ Clash-of-Clout is a revolutionary platform that combines AI-driven meme generati
 - Leveraging CollabLand's AI-Agent-Starter-Kit for intelligent meme analysis
 - Custom actions for meme generation and engagement tracking
 - Memory management for context-aware responses
-- Real-time message processing through ElizaService
 
 ### 📚 Knowledge Base & GAIA Node
 - Decentralized storage via GAIA node for meme templates and metadata
