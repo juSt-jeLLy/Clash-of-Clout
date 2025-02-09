@@ -14,7 +14,7 @@ Clash of Clout is a revolutionary platform where 🎨 AI-generated memes meet cr
 ### 🤖 AI-Powered Creation
 
 - Real-time crypto trend analysis
-- GPT-powered meme generation
+- Knowledge base powered meme generation
 - GAIANET template integration
 - Cross-platform posting (Twitter/Discord)
 
@@ -42,7 +42,7 @@ Clash of Clout is a revolutionary platform where 🎨 AI-generated memes meet cr
 - **Backend**: Express, CollabLand AI-Agent-Kit
 - **Blockchain**: Flow Testnet
 - **Storage**: GAIANET
-- **AI/Social**: OpenAI GPT, Twitter API
+- **AI/Social**: Twitter API, Knowledgebase from Twitter
 
 ## 🔄 Core Workflow
 
