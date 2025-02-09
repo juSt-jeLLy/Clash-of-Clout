@@ -67,14 +67,11 @@ By democratizing meme creation and rewards, Clash-of-Clout empowers creators wor
 
 - Leveraging CollabLand's AI-Agent-Starter-Kit for intelligent meme analysis
 - Custom actions for meme generation and engagement tracking
-- Memory management for context-aware responses
 
 ### 📚 Knowledge Base & GAIA Node
 
-- Decentralized storage via GAIA node for meme templates and metadata
-- Integrated knowledge base for trending crypto topics
-- Real-time data synchronization with GAIA network
-- Secure content distribution across nodes
+- Custome Knowledge Base using last Tweets
+- GAIA Node to generate meme templates
 
 ### 💎 Flow Blockchain Integration
 
@@ -92,7 +89,7 @@ By democratizing meme creation and rewards, Clash-of-Clout empowers creators wor
 ### 🔄 Integration Flow
 
 1. AI Agent processes market trends and generates meme concepts
-2. GAIA node stores and distributes meme templates
+2. GAIA node generates distributes meme templates
 3. Users mint MTK tokens from Flow Token
 4. Staking system allows MTK token placement on memes
 5. Smart contracts track engagement and distribute rewards
