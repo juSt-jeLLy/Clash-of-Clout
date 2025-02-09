@@ -42,13 +42,6 @@ Smart contract-powered reward allocation:
 - **Social**: Twitter & Farcaster APIs
 
 
-## 💡 Unique Value Proposition
-
-- Instant Milestone Payments
-- Transparent Project Tracking
-- Reduced Administrative Overhead
-- Global Collaboration Opportunities
-
 ## 🔄 Workflow
 
 1. AI generates trending crypto memes
@@ -113,47 +106,41 @@ Community Input | Minimal | Stake-Based Voting
 
 Join us in revolutionizing the crypto meme economy! 🚀
 
-## 🚀 Installation
-
-
-git clone [repository-url]
-
-
 ## 🚀 Getting Started
 
 1. Prerequisites:
 
-
+```bash
 node >= 22 🟢
 pnpm >= 9.14.1 📦
-
+```
 
 2. Install dependencies:
 
-
+```bash
 pnpm install
-
+```
 
 3. Run the predev script:
 
-
+```bash
 pnpm run predev
-
+```
 
 4. Fire up the dev servers:
 
-
+```bash
 pnpm run dev
-
+```
 
 ## 📁 Repository Structure
 
-
+```
 ├── 📦 client/                 # Next.js frontend
 ├── ⚙️ server/               # Express.js backend
 ├── 📝 .env.example         # Root environment variables example for server
 ├── 🔧 package.json         # Root package with workspace config
-
+```
 
 ## Backend
 
@@ -161,7 +148,8 @@ You should first run a gaianet node and add the GAIA_NODE_DOMAIN environment var
 
 ### Scripts
 
-
+```bash
 pnpm run dev        # Development mode
 pnpm run build     # Build actions
 pnpm run watch     # Watch mode
+```
