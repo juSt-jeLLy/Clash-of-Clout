@@ -40,7 +40,7 @@ Clash of Clout is a revolutionary platform where 🎨 AI-generated memes meet cr
 
 - **Frontend**: Next.js, TypeScript
 - **Backend**: Express, CollabLand AI-Agent-Kit
-- **Blockchain**: Flow Testnet
+- **Blockchain**: Flow Testnet, Contract Source Code: https://github.com/juSt-jeLLy/Clash-of-Clout/blob/main/server/src/contracts/meme-contract/MemeContract.sol
 - **Storage**: GAIANET
 - **AI/Social**: Twitter API, Knowledgebase from Twitter
 
