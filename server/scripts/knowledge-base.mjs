@@ -23,6 +23,37 @@ async function getLastTweets() {
   const response = await getRequest();
 }
 
+function groupTweets(tweets, maxWords = 200) {
+  let currentChunk = "";
+  const chunks = [];
+
+  tweets.forEach((tweet) => {
+    const text = tweet.text.trim();
+    if (!text) return;
+
+    if (text.split(" ").length > maxWords) {
+      console.log(`Tweet ignoré (trop long) : ${text.substring(0, 50)}...`);
+      return;
+    }
+
+    const currentChunkWordCount = currentChunk.split(" ").length;
+    const tweetWordCount = text.split(" ").length;
+
+    if (currentChunkWordCount + tweetWordCount > maxWords) {
+      chunks.push(currentChunk.trim());
+      currentChunk = "";
+    }
+
+    currentChunk += " " + text;
+  });
+
+  if (currentChunk.trim()) {
+    chunks.push(currentChunk.trim());
+  }
+
+  return chunks;
+}
+
 async function getRequest() {
   try {
     const cookieJson = await fs.readFile(twitterCookiesPath, "utf-8");
@@ -36,13 +67,21 @@ async function getRequest() {
     }
     const me = await scraper.me();
     console.log(me);
+
+    const allTweets = [];
+
     for (const influencer of list) {
-      const tweets = await scraper.getTweets(influencer, 100);
+      const tweets = await scraper.getTweets(influencer, 30);
       for await (const tweet of tweets) {
-        if (tweet.text) console.log("item", tweet.text);
-        fs.appendFile("./tweets.txt", tweet.text + "\n");
+        if (tweet.text) allTweets.push(tweet);
       }
     }
+
+    const tweetChunks = groupTweets(allTweets);
+
+    tweetChunks.forEach((chunk) => {
+      fs.appendFile("./tweets.txt", chunk + "\n\n");
+    });
   } catch (error) {
     console.log(error);
   }
