@@ -1,5 +1,8 @@
 # 🎭 Clash-of-Clout
-![Clash of Clout Logo](icon_1-1.webp)
+
+<p align="center">
+  <img src="icon_1.webp" width="200" alt="Clash of Clout Logo">
+</p>
 An AI-powered meme battle platform where creativity meets crypto rewards.
 
 ## 🚀 Overview
@@ -9,12 +12,14 @@ Clash-of-Clout is a revolutionary platform that combines AI-driven meme generati
 ## ✨ Core Features
 
 ### 🤖 AI-Powered Creation
+
 - Real-time crypto trend analysis
 - GPT-powered meme generation
 - GAIANET template integration
 - Cross-platform posting (Twitter/Discord)
 
 ### 💎 Tokenized Economy
+
 - Flow Token-based staking
 - Smart contract reward distribution:
   - 70% creators
@@ -23,6 +28,7 @@ Clash-of-Clout is a revolutionary platform that combines AI-driven meme generati
 - Transparent stake management
 
 ### 📊 Engagement & Analytics
+
 - Real-time performance tracking
 - Automated popularity scoring
 - Social proof verification
@@ -31,6 +37,7 @@ Clash-of-Clout is a revolutionary platform that combines AI-driven meme generati
 - Discord API integration
 
 ## 🛠 Technical Stack
+
 - **Frontend**: Next.js, TypeScript
 - **Backend**: Express, CollabLand AI-Agent-Kit
 - **Blockchain**: Flow Testnet
@@ -38,6 +45,7 @@ Clash-of-Clout is a revolutionary platform that combines AI-driven meme generati
 - **AI/Social**: OpenAI GPT, Twitter API
 
 ## 🔄 Core Workflow
+
 1. AI generates trending memes
 2. Social platform distribution
 3. Token staking & voting
@@ -46,7 +54,9 @@ Clash-of-Clout is a revolutionary platform that combines AI-driven meme generati
 6. Winner distribution
 
 ## 🌍 Global Impact
+
 By democratizing meme creation and rewards, Clash-of-Clout empowers creators worldwide to:
+
 - Participate in viral content creation
 - Earn rewards for creativity
 - Build global community engagement
@@ -54,17 +64,20 @@ By democratizing meme creation and rewards, Clash-of-Clout empowers creators wor
 ## 🔗 Technical Integration
 
 ### 🤖 AI Agent Integration (CollabLand)
+
 - Leveraging CollabLand's AI-Agent-Starter-Kit for intelligent meme analysis
 - Custom actions for meme generation and engagement tracking
 - Memory management for context-aware responses
 
 ### 📚 Knowledge Base & GAIA Node
+
 - Decentralized storage via GAIA node for meme templates and metadata
 - Integrated knowledge base for trending crypto topics
 - Real-time data synchronization with GAIA network
 - Secure content distribution across nodes
 
 ### 💎 Flow Blockchain Integration
+
 - Custom MTK token minted from Flow Token
 - Smart contracts for:
   - Token minting and distribution
@@ -77,6 +90,7 @@ By democratizing meme creation and rewards, Clash-of-Clout empowers creators wor
   - Transaction verification
 
 ### 🔄 Integration Flow
+
 1. AI Agent processes market trends and generates meme concepts
 2. GAIA node stores and distributes meme templates
 3. Users mint MTK tokens from Flow Token
@@ -84,24 +98,17 @@ By democratizing meme creation and rewards, Clash-of-Clout empowers creators wor
 5. Smart contracts track engagement and distribute rewards
 6. Winners receive MTK tokens on Flow testnet
 
-
-
-
-
 ## 💡 Competitive Advantages
 
-Feature | Traditional Platforms | Clash-of-Clout
---------|---------------------|----------------
-Content Creation | Manual | AI-Assisted
-Reward System | Limited | Token-Based
-Engagement Tracking | Basic | Advanced Analytics
-Payment Speed | Delayed | Instant
-Community Input | Minimal | Stake-Based Voting
+| Feature             | Traditional Platforms | Clash-of-Clout     |
+| ------------------- | --------------------- | ------------------ |
+| Content Creation    | Manual                | AI-Assisted        |
+| Reward System       | Limited               | Token-Based        |
+| Engagement Tracking | Basic                 | Advanced Analytics |
+| Payment Speed       | Delayed               | Instant            |
+| Community Input     | Minimal               | Stake-Based Voting |
 
 Join us in revolutionizing the crypto meme economy! 🚀
-
-
-
 
 ## 🚀 Getting Started
 
