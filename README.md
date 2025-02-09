@@ -1,13 +1,13 @@
-# 🎭 Clash-of-Clout - <span style="font-size: 0.8em"> Where Memes Reign, Tokens Flow, and Clout is King!</span>
-
+# 🎭 Clash-of-Clout - The ultimate AI MEME battle!
 <p align="center">
   <img src="icon_1.webp" width="200" alt="Clash of Clout Logo">
 </p>
-An AI-powered meme battle platform where creativity meets crypto rewards.
+An AI-Genereted meme battle platform where creativity meets crypto rewards. Where Memes Reign, Tokens Flow, and Clout is King!
+
 
 ## 🚀 Overview
 
-Clash-of-Clout is a revolutionary platform that combines AI-driven meme generation using GAIA nodes and Knowledgebase, social engagement(Twitter and Discord), and blockchain rewards(Flow chain). Users can create, stake, and earn from viral crypto memes in a gamified ecosystem.
+Clash of Clout is a revolutionary platform where 🎨 AI-generated memes meet crypto trends, powered by GAIA nodes and real-time analytics using Knowledgebase. Our ecosystem combines 📊 cross-platform social engagement tracking (Twitter + Discord), 💎 Flow chain token staking, and 🎮 gamified competitions where creators stake, vote and earn rewards through transparent smart contracts on flow chain. Join thousands of creators in the ultimate meme battle arena - create, compete, and earn in the new era of viral content! ⚡
 
 ## ✨ Core Features
 
