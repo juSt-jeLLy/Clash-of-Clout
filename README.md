@@ -167,3 +167,13 @@ pnpm run dev        # Development mode
 pnpm run build     # Build actions
 pnpm run watch     # Watch mode
 ```
+
+## Team
+
+We are an incredible team of 3 developers. ✨
+
+- Yagnesh Markana, role: Front-End Developer https://x.com/Yagneshh28
+
+- Anushka Somani, role: Smart Contract Developer https://x.com/ishbubbles1 https://www.linkedin.com/in/anushka-somani1
+
+- Salim Boujaddi, role: Back-end developer https://x.com/0xonetwothree https://www.linkedin.com/in/salim-boujaddi/
