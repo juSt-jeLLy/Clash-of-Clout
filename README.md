@@ -6,41 +6,6 @@ An AI-powered meme battle platform where creativity meets crypto rewards.
 
 Clash-of-Clout is a revolutionary platform that combines AI-driven meme generation, social engagement, and blockchain rewards. Users can create, stake, and earn from viral crypto memes in a gamified ecosystem.
 
-## 🔗 Technical Integration
-
-### 🤖 AI Agent Integration (CollabLand)
-- Leveraging CollabLand's AI-Agent-Starter-Kit for intelligent meme analysis
-- Custom actions for meme generation and engagement tracking
-- Memory management for context-aware responses
-
-### 📚 Knowledge Base & GAIA Node
-- Decentralized storage via GAIA node for meme templates and metadata
-- Integrated knowledge base for trending crypto topics
-- Real-time data synchronization with GAIA network
-- Secure content distribution across nodes
-
-### 💎 Flow Blockchain Integration
-- Custom MTK token minted from Flow Token
-- Smart contracts for:
-  - Token minting and distribution
-  - Meme staking mechanism
-  - Reward calculation and distribution
-- Flow testnet deployment for:
-  - Stake management
-  - Voting system
-  - Reward distribution
-  - Transaction verification
-
-### 🔄 Integration Flow
-1. AI Agent processes market trends and generates meme concepts
-2. GAIA node stores and distributes meme templates
-3. Users mint MTK tokens from Flow Token
-4. Staking system allows MTK token placement on memes
-5. Smart contracts track engagement and distribute rewards
-6. Winners receive MTK tokens on Flow testnet
-
-
-
 ## ✨ Core Features
 
 ### 🤖 AI-Powered Creation
@@ -86,6 +51,43 @@ By democratizing meme creation and rewards, Clash-of-Clout empowers creators wor
 - Earn rewards for creativity
 - Build global community engagement
 
+## 🔗 Technical Integration
+
+### 🤖 AI Agent Integration (CollabLand)
+- Leveraging CollabLand's AI-Agent-Starter-Kit for intelligent meme analysis
+- Custom actions for meme generation and engagement tracking
+- Memory management for context-aware responses
+
+### 📚 Knowledge Base & GAIA Node
+- Decentralized storage via GAIA node for meme templates and metadata
+- Integrated knowledge base for trending crypto topics
+- Real-time data synchronization with GAIA network
+- Secure content distribution across nodes
+
+### 💎 Flow Blockchain Integration
+- Custom MTK token minted from Flow Token
+- Smart contracts for:
+  - Token minting and distribution
+  - Meme staking mechanism
+  - Reward calculation and distribution
+- Flow testnet deployment for:
+  - Stake management
+  - Voting system
+  - Reward distribution
+  - Transaction verification
+
+### 🔄 Integration Flow
+1. AI Agent processes market trends and generates meme concepts
+2. GAIA node stores and distributes meme templates
+3. Users mint MTK tokens from Flow Token
+4. Staking system allows MTK token placement on memes
+5. Smart contracts track engagement and distribute rewards
+6. Winners receive MTK tokens on Flow testnet
+
+
+
+
+
 ## 💡 Competitive Advantages
 
 Feature | Traditional Platforms | Clash-of-Clout
@@ -98,30 +100,6 @@ Community Input | Minimal | Stake-Based Voting
 
 Join us in revolutionizing the crypto meme economy! 🚀
 
-## 🔄 System Workflow
-
-```mermaid
-graph TD
-    A[AI Analysis] -->|Trend Detection| B[Meme Generation]
-    B -->|Store Meme Data| C[Flow Smart Contract]
-    
-    C -->|Store Metadata| D[GAIANET Storage]
-    D -->|Social Post| E[Twitter/Discord]
-    
-    F[Frontend] -->|Fetch Memes| C
-    F -->|Display| G[Home Feed]
-    F -->|Display| H[Profile Page]
-    F -->|Display| I[Trending Page]
-    
-    J[Users] -->|MTK Token Mint| K[Staking Pool]
-    K -->|Stake on Memes| C
-    
-    C -->|Track Engagement| L[Smart Contract Logic]
-    L -->|Calculate| M[Reward Distribution]
-    
-    M -->|70%| N[Creator]
-    M -->|20%| O[Stakers]
-    M -->|10%| P[Platform]
 
 
 
