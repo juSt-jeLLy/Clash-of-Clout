@@ -1,5 +1,5 @@
 # 🎭 Clash-of-Clout
-
+![Clash of Clout Logo](icon_1-1.webp)
 An AI-powered meme battle platform where creativity meets crypto rewards.
 
 ## 🚀 Overview
