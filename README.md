@@ -98,6 +98,11 @@ By democratizing meme creation and rewards, Clash-of-Clout empowers creators wor
 5. Smart contracts track engagement and distribute rewards
 6. Winners receive MTK tokens on Flow testnet
 
+## User Flow
+<p align="center">
+  <img src="Flowchart.jpg" width="800" alt="Clash of Clout User Flow">
+</p>
+
 ## 🏗 Clash of Clout Architecture
 <p align="center">
   <img src="image.webp" width="800" alt="Clash of Clout Architecture">
